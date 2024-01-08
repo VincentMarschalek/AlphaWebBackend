@@ -1,11 +1,11 @@
- package at.alphaplan.AlphaWeb.domain.user;
+package at.alphaplan.AlphaWeb.domain.user;
 
- import lombok.AllArgsConstructor;
- import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
- @Data
- @AllArgsConstructor
- public class Address {
+@Data
+@AllArgsConstructor
+public class Address {
 
   private String street;
   private String number;
@@ -13,5 +13,4 @@
   private int postalCode;
   private String region;
   private String country;
-
- }
+}

@@ -4,6 +4,6 @@ import org.springframework.data.annotation.Id;
 
 public class lineItems {
 
-    @Id private Id productID;
-    private int price;
+  @Id private Id productID;
+  private int price;
 }

@@ -1,13 +1,14 @@
 package at.alphaplan.AlphaWeb.domain;
 
-import java.io.Serializable;
-import java.time.Instant;
-import java.util.Objects;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.annotation.Version;
+
+import java.io.Serializable;
+import java.time.Instant;
+import java.util.Objects;
 
 // Base class for all domain entities (that are persisted to the as an own collection)
 // Lombok generates getters for all fields

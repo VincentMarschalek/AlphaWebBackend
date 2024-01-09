@@ -2,7 +2,7 @@ package at.alphaplan.AlphaWeb.domain.order;
 
 import at.alphaplan.AlphaWeb.domain.BaseEntity;
 import at.alphaplan.AlphaWeb.domain.user.User;
-import at.alphaplan.AlphaWeb.domain.user.lineItems;
+import at.alphaplan.AlphaWeb.domain.user.LineItems;
 import org.springframework.data.annotation.Id;
 
 public class Order extends BaseEntity<String> {
@@ -15,7 +15,7 @@ public class Order extends BaseEntity<String> {
 
   private String address;
 
-  private lineItems lineItems;
+  private LineItems lineItems;
 
   protected Order(String id) {
     super(id);

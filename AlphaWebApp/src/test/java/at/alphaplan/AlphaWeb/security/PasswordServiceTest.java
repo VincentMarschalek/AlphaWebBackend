@@ -32,7 +32,7 @@ public class PasswordServiceTest {
 
   @Test
   public void encode_ShouldFail_WhenProvidingWeakPasswords() {
- 
+
     // When/Then
     assertThrows(IllegalArgumentException.class, () -> passwordService.encoded(weakPassword));
   }

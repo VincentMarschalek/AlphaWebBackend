@@ -49,8 +49,12 @@ public class PasswordServiceTest {
 
     // When
     EncodedPassword password = passwordService.encoded(strongPassword);
+    System.out.println(password.getHashedValue());
 
     // Then
     assertThat(password.getHashedValue(), is(not(equalTo(strongPassword))));
   }
+
+  @Test
+  public void encode_ShouldReturnDifferentHashes_WhenHashingSamePassword() {}
 }

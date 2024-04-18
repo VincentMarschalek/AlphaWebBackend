@@ -2,10 +2,15 @@ package at.alphaplan.AlphaWeb.security;
 
 import com.nulabinc.zxcvbn.Strength;
 import com.nulabinc.zxcvbn.Zxcvbn;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 // outer class
 public class PasswordService {
+
+
+  public static final int ZXCVBN_STRENGHT_THRESHOLD = 3;
   private final Zxcvbn zxcvbn;
   private final PasswordEncoder passwordEncoder;
 
@@ -18,7 +23,7 @@ public class PasswordService {
     // 1.password strenght assessment
     Strength measure = zxcvbn.measure(rawPassword);
     System.out.println("Score:" + measure.getScore());
-    if (measure.getScore() <= 2) {
+    if (measure.getScore() < ZXCVBN_STRENGHT_THRESHOLD) {
       throw new IllegalArgumentException("Password is weak! Score:" + measure.getScore());
     }
 
@@ -35,7 +40,7 @@ public class PasswordService {
     private final String hashedValue;
 
     // Constructor
-    private EncodedPassword(String hashedValue) {
+    public EncodedPassword(String hashedValue) {
       this.hashedValue = hashedValue;
     }
 

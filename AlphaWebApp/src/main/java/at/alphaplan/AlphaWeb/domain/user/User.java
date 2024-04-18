@@ -2,8 +2,10 @@ package at.alphaplan.AlphaWeb.domain.user;
 
 import static at.alphaplan.AlphaWeb.foundation.AssertUtil.isValidEmail;
 import static at.alphaplan.AlphaWeb.foundation.EntityUtil.generateUUIDv4;
+import static at.alphaplan.AlphaWeb.security.PasswordService.*;
 
 import at.alphaplan.AlphaWeb.domain.BaseEntity;
+import at.alphaplan.AlphaWeb.security.PasswordService;
 import lombok.Getter;
 import lombok.ToString;
 import org.springframework.data.annotation.PersistenceCreator;
@@ -29,24 +31,20 @@ public class User extends BaseEntity<String> {
 
   private Role role;
 
-  // Cstr for Spring
+  // Ctr for Spring
   @PersistenceCreator
   protected User(String id) {
     super(id);
   }
 
-  // Cstr for me
-  public User(String email, Profile profile, Account account, ShoppingCart shoppingCart, Role role
-      // EncodedPassword password
-      ) {
+  // Ctr for me
+  public User(String email, Role role, EncodedPassword EncodedPassword)
+  {
 
     super(generateUUIDv4());
 
     this.email = isValidEmail(email, "email");
-    // this.password=password.getEncodedPassword();
-    this.profile = profile;
+    this.password = EncodedPassword.getHashedValue();
     this.role = role;
-    this.account = new Account();
-    this.shoppingCart = new ShoppingCart();
   }
 }

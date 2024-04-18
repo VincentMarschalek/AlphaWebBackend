@@ -1,14 +1,16 @@
 package at.alphaplan.AlphaWeb.persistance;
 
 import static at.alphaplan.AlphaWeb.domain.user.Role.USER;
+import static at.alphaplan.AlphaWeb.security.PasswordService.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import at.alphaplan.AlphaWeb.config.MongoConfig;
 import at.alphaplan.AlphaWeb.domain.user.*;
 import java.util.Optional;
+
+import at.alphaplan.AlphaWeb.security.PasswordService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,15 +25,11 @@ public class UserRepositoryTest {
   public static final String MAIL = "test@spengergasse.at";
   @Autowired private UserRepository userRepository;
   private User userSaved;
+  private PasswordService passwordService;
 
   @BeforeEach
   public void setup() {
-    var profile =
-        new Profile(
-            "Vincent",
-            "Mar",
-            new Address("Spengergasse", "1", "Vienna", 1500, "Vienna", "Austria"));
-    var user = new User(MAIL, profile, new Account(), new ShoppingCart(), USER);
+    var user = new User(MAIL,USER, new EncodedPassword("admin123"));
     userRepository.deleteAll();
     userSaved = userRepository.save(user);
   }
@@ -75,12 +73,7 @@ public class UserRepositoryTest {
   @Test
   public void saveUser_shouldFail_withDuplicateEmail() {
     // GIVEN
-    var profile =
-        new Profile(
-            "Vincent",
-            "Mar",
-            new Address("Spengergasse", "1", "Vienna", 1500, "Vienna", "Austria"));
-    var duplicatedUser = new User(MAIL, profile, new Account(), new ShoppingCart(), USER);
+    var duplicatedUser = new User(MAIL, USER,new EncodedPassword("admin123"));
     // WHEN & THEN
     assertThrows(DuplicateKeyException.class, () -> userRepository.save(duplicatedUser));
   }

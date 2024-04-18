@@ -16,8 +16,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class PasswordServiceTest {
   // 1. Test Passwort Stärke
-  // FAIL: -1/2
-  // SUCCESS: -3/4
+  // FAIL: 1/2
+  // SUCCESS: 3/4
 
   public static final String weakPassword = "password123";
   public static final String strongPassword = "AlleMeineEntchenSchwimmenInDemSee";
@@ -56,5 +56,15 @@ public class PasswordServiceTest {
   }
 
   @Test
-  public void encode_ShouldReturnDifferentHashes_WhenHashingSamePassword() {}
+  public void encode_ShouldReturnDifferentHashes_WhenHashingSamePassword() {
+
+    //When
+    EncodedPassword password = passwordService.encoded(strongPassword);
+    EncodedPassword password2 = passwordService.encoded(strongPassword);
+    System.out.println(password.getHashedValue());
+    System.out.println(password2.getHashedValue());
+
+    //Then
+    assertThat(password.getHashedValue(), is(not(equalTo(password2.getHashedValue()))));
+  }
 }

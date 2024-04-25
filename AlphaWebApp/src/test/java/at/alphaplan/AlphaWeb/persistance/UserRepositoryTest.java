@@ -6,11 +6,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import at.alphaplan.AlphaWeb.config.MongoConfig;
 import at.alphaplan.AlphaWeb.domain.user.*;
-import java.util.Optional;
-
 import at.alphaplan.AlphaWeb.security.PasswordService;
+import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ public class UserRepositoryTest {
 
   @BeforeEach
   public void setup() {
-    var user = new User(MAIL,USER, new EncodedPassword("admin123"));
+    var user = new User(MAIL, USER, );
     userRepository.deleteAll();
     userSaved = userRepository.save(user);
   }
@@ -73,7 +73,7 @@ public class UserRepositoryTest {
   @Test
   public void saveUser_shouldFail_withDuplicateEmail() {
     // GIVEN
-    var duplicatedUser = new User(MAIL, USER,new EncodedPassword("admin123"));
+    var duplicatedUser = new User(MAIL, USER, );
     // WHEN & THEN
     assertThrows(DuplicateKeyException.class, () -> userRepository.save(duplicatedUser));
   }

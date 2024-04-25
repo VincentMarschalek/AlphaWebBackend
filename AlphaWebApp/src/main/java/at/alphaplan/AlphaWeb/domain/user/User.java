@@ -5,7 +5,6 @@ import static at.alphaplan.AlphaWeb.foundation.EntityUtil.generateUUIDv4;
 import static at.alphaplan.AlphaWeb.security.PasswordService.*;
 
 import at.alphaplan.AlphaWeb.domain.BaseEntity;
-import at.alphaplan.AlphaWeb.security.PasswordService;
 import lombok.Getter;
 import lombok.ToString;
 import org.springframework.data.annotation.PersistenceCreator;
@@ -38,13 +37,12 @@ public class User extends BaseEntity<String> {
   }
 
   // Ctr for me
-  public User(String email, Role role, EncodedPassword EncodedPassword)
-  {
+  public User(String email, Role role, EncodedPassword encodedPassword) {
 
     super(generateUUIDv4());
 
     this.email = isValidEmail(email, "email");
-    this.password = EncodedPassword.getHashedValue();
+    this.password = encodedPassword.getHashedValue();
     this.role = role;
   }
 }

@@ -11,4 +11,10 @@ public class SecurityConfig {
   public PasswordEncoder passwordEncoder() {
     return PasswordEncoderFactories.createDelegatingPasswordEncoder();
   }
+
+  @Bean
+  public PasswordService passwordService(PasswordEncoder passwordEncoder)
+  {
+    return new PasswordService(passwordEncoder);
+  }
 }

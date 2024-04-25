@@ -31,6 +31,9 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
 	implementation("com.nulab-inc:zxcvbn:1.8.2")
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mail
+    implementation("org.springframework.boot:spring-boot-starter-mail:3.2.5")
+
 }
 
 tasks.withType<Test> {

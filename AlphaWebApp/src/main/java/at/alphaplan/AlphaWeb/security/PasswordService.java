@@ -41,6 +41,5 @@ public class PasswordService {
     public EncodedPassword(String hashedValue) {
       this.hashedValue = hashedValue;
     }
-
   }
 }

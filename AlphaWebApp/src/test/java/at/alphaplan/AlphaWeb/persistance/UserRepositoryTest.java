@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import at.alphaplan.AlphaWeb.config.MongoConfig;
 import at.alphaplan.AlphaWeb.domain.user.*;
-import at.alphaplan.AlphaWeb.security.PasswordService;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,6 +24,7 @@ public class UserRepositoryTest {
   public static final String MAIL = "test@spengergasse.at";
   @Autowired private UserRepository userRepository;
   private User userSaved;
+
   @BeforeEach
   public void setup() {
     var user = new User(MAIL, USER, new EncodedPassword("password"));

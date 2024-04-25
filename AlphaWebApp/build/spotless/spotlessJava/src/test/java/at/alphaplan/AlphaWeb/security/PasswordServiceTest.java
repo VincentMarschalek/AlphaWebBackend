@@ -7,13 +7,13 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import at.alphaplan.AlphaWeb.security.PasswordService.EncodedPassword;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+// @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@SpringBootTest(classes = {SecurityConfig.class})
 public class PasswordServiceTest {
   // 1. Test Passwort Stärke
   // FAIL: 1/2
@@ -21,34 +21,31 @@ public class PasswordServiceTest {
 
   public static final String weakPassword = "password123";
   public static final String strongPassword = "AlleMeineEntchenSchwimmenInDemSee";
-  private PasswordService passwordService;
-  private PasswordEncoder passwordEncoder;
 
-  @BeforeAll
-  public void setup() {
-    passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-    passwordService = new PasswordService(passwordEncoder);
-  }
+  @Autowired PasswordService passwordService;
+
+  @BeforeEach
+  public void setup() {}
 
   @Test
-  public void encode_ShouldFail_WhenProvidingWeakPasswords() {
+  public void encode_shouldThrow_whenProvidingWeakPasswords() {
 
     // When/Then
-    assertThrows(IllegalArgumentException.class, () -> passwordService.encoded(weakPassword));
+    assertThrows(IllegalArgumentException.class, () -> passwordService.encode(weakPassword));
   }
 
   @Test
-  public void encode_ShouldPass_WhenProvidingStrongPasswords() {
+  public void encode_shouldPass_whenProvidingStrongPasswords() {
 
     // When/Then
-    passwordService.encoded(strongPassword);
+    passwordService.encode(strongPassword);
   }
 
   @Test
-  public void encode_ShouldReturnHashes_WhenProvidingStrongPasswords() {
+  public void encode_shouldReturnHashes_whenProvidingStrongPasswords() {
 
     // When
-    EncodedPassword password = passwordService.encoded(strongPassword);
+    EncodedPassword password = passwordService.encode(strongPassword);
     System.out.println(password.getHashedValue());
 
     // Then
@@ -56,11 +53,11 @@ public class PasswordServiceTest {
   }
 
   @Test
-  public void encode_ShouldReturnDifferentHashes_WhenHashingSamePassword() {
+  public void encode_shouldReturnDifferentHashes_whenHashingSamePassword() {
 
     // When
-    EncodedPassword password = passwordService.encoded(strongPassword);
-    EncodedPassword password2 = passwordService.encoded(strongPassword);
+    EncodedPassword password = passwordService.encode(strongPassword);
+    EncodedPassword password2 = passwordService.encode(strongPassword);
     System.out.println(password.getHashedValue());
     System.out.println(password2.getHashedValue());
 

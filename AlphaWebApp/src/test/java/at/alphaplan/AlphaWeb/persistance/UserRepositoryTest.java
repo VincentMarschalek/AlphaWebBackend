@@ -29,7 +29,7 @@ public class UserRepositoryTest {
 
   @BeforeEach
   public void setup() {
-    var user = new User(MAIL, USER, );
+    var user = new User(MAIL, USER, new EncodedPassword("password"));
     userRepository.deleteAll();
     userSaved = userRepository.save(user);
   }
@@ -73,7 +73,7 @@ public class UserRepositoryTest {
   @Test
   public void saveUser_shouldFail_withDuplicateEmail() {
     // GIVEN
-    var duplicatedUser = new User(MAIL, USER, );
+    var duplicatedUser = new User(MAIL, USER, new EncodedPassword("password"));
     // WHEN & THEN
     assertThrows(DuplicateKeyException.class, () -> userRepository.save(duplicatedUser));
   }

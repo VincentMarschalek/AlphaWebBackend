@@ -14,6 +14,7 @@ public class PasswordService {
   public static final int ZXCVBN_STRENGHT_THRESHOLD = 3;
   private final Zxcvbn zxcvbn = new Zxcvbn();
   private final PasswordEncoder passwordEncoder;
+
   public EncodedPassword encode(String rawPassword) {
     // 1.password strenght assessment
     Strength measure = zxcvbn.measure(rawPassword);

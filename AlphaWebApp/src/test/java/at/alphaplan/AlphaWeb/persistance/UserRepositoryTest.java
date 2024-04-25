@@ -25,8 +25,6 @@ public class UserRepositoryTest {
   public static final String MAIL = "test@spengergasse.at";
   @Autowired private UserRepository userRepository;
   private User userSaved;
-  private PasswordService passwordService;
-
   @BeforeEach
   public void setup() {
     var user = new User(MAIL, USER, new EncodedPassword("password"));

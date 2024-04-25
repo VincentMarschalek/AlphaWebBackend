@@ -17,11 +17,13 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class UserRegistrationService {
   private final Logger LOGGER = LoggerFactory.getLogger(UserRegistrationService.class);
+
   private final PasswordService passwordService;
   private final EmailService emailService;
   private final UserRepository userRepository;
 
   public User register(UserRegistrationCommand command) {
+
     LOGGER.info("User registration with email {}", command.email());
 
     // 1.Check if email already exists

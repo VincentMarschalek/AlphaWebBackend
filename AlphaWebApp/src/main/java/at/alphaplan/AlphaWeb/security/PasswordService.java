@@ -2,6 +2,7 @@ package at.alphaplan.AlphaWeb.security;
 
 import com.nulabinc.zxcvbn.Strength;
 import com.nulabinc.zxcvbn.Zxcvbn;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,7 @@ public class PasswordService {
   private final PasswordEncoder passwordEncoder;
 
   public EncodedPassword encode(String rawPassword) {
+
     // 1.password strenght assessment
     Strength measure = zxcvbn.measure(rawPassword);
     System.out.println("Score:" + measure.getScore());
@@ -31,6 +33,7 @@ public class PasswordService {
 
   // inner class
   // static or non-static
+  @Getter
   public static class EncodedPassword {
     private final String hashedValue;
 
@@ -39,8 +42,5 @@ public class PasswordService {
       this.hashedValue = hashedValue;
     }
 
-    public String getHashedValue() {
-      return hashedValue;
-    }
   }
 }

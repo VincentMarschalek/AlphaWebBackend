@@ -5,11 +5,12 @@ import at.alphaplan.AlphaWeb.presentation.commands.Commands;
 import at.alphaplan.AlphaWeb.service.UserRegistrationService;
 import java.net.URI;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import static at.alphaplan.AlphaWeb.presentation.commands.Commands.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,19 +19,25 @@ public class UserRegistrationController {
   // GET/POST/PUT/DELETE
   // Postman, curl
   // register(..)
+  private final Logger LOGGER = LoggerFactory.getLogger(UserRegistrationController.class);
+
 
   private final UserRegistrationService userRegistrationService;
 
   @PostMapping
-  public ResponseEntity<User> register(@RequestBody Commands.UserRegistrationCommand command) {
+  public ResponseEntity<User> register(@RequestBody UserRegistrationCommand command) {
+    LOGGER.info("user registration controller");
 
     var registeredUser = userRegistrationService.register(command);
 
-    String locationUri = "/api/user/" + registeredUser.getId();
-    URI uri = URI.create(locationUri);
+    URI uri = URI.create("/api/user/" + registeredUser.getId());
 
-    ResponseEntity<User> userResponse = ResponseEntity.created(uri).body(registeredUser);
+    return ResponseEntity.created(uri).body(registeredUser);
+  }
 
-    return userResponse;
+  @GetMapping("/verify")
+  public void verify(@ModelAttribute UserVerificationCommand command)
+  {
+    userRegistrationService.verify(command);
   }
 }

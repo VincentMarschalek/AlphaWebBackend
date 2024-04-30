@@ -9,27 +9,34 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class EmailService {
+
   private final IMailSender mailSender;
 
-  @Value("${domain}")
+  @Value("${app.public.protocol:http}")
+  private String protocol;
+
+  @Value("${app.public.domain:localhost}")
   private String domain;
 
-  private final String VERIFICATION_LINK = "%s/api/registration/verify/userId=%s&tokenId=%s";
+  @Value("${app.public.port:8080}")
+  private String port;
 
-  @Async
+  private final String VERIFICATION_LINK = "/api/registration/token?userId=%s&tokenId=%s";
+
+  //@Async
   public void sendVerificationEmail(User user) {
     mailSender.sendMail(
         new EmailDTO(
             user.getEmail(),
             getVerificationSubject(),
-            getVerificationBody(user, user.getAccount().getTokenId())));
+            getVerificationBody(user)));
   }
 
   public String getVerificationSubject() {
     return "Click the link and verify your email to move on.";
   }
 
-  public String getVerificationBody(User user, String tokenId) {
-    return String.format(VERIFICATION_LINK, domain, user.getId(), tokenId);
+  public String getVerificationBody(User user) {
+    return String.format(VERIFICATION_LINK, domain, user.getId());
   }
 }

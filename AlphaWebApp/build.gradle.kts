@@ -30,10 +30,15 @@ dependencies {
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
+
+	//Password Strenght Assessment
 	implementation("com.nulab-inc:zxcvbn:1.8.2")
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mail
+
+	//Mail
     implementation("org.springframework.boot:spring-boot-starter-mail:3.2.5")
 
+    //Controller Tests
+    testImplementation("io.rest-assured:rest-assured:5.3.1")
 }
 
 tasks.withType<Test> {

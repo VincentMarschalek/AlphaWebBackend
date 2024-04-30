@@ -1,8 +1,13 @@
 package at.alphaplan.AlphaWeb.presentation.commands;
 
 public class Commands {
-  public record UserRegistrationCommand(String email, String password) {}
-  ;
+  public record UserRegistrationCommand(String email, String password)
+  {
+    public String email() {
+      return email.trim().toLowerCase();
+    }
 
-  public record UserRegistrationCommand_EmailForm(String email) {}
+  }
+
+  public record  UserVerificationCommand(String userId, String tokenId) {}
 }

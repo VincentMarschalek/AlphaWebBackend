@@ -41,4 +41,9 @@ public class UserRegistrationService {
     LOGGER.info("User registration with email {} successful", command.email());
     return savedUser;
   }
+
+  public void verify(UserVerificationCommand command)
+  {
+
+  }
 }

@@ -13,6 +13,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class UserRegistrationService {
@@ -42,8 +44,15 @@ public class UserRegistrationService {
     return savedUser;
   }
 
-  public void verify(UserVerificationCommand command)
-  {
+  public void verify(UserVerificationCommand command) {
 
+    LOGGER.info("User verification with id {} and token {}", command.userId(), command.tokenId());
+
+    //find userbyID, returned optional
+     User user = userRepository.findById(command.userId()).orElseThrow(() -> new IllegalArgumentException("user not found with id" + command.userId()));
+     user.getAccount().verifyToken(command.tokenId());
+     user.getAccount().setEnabled(true);
+     userRepository.save(user);
+     LOGGER.info("Successful user verification with id {} and token {}", command.userId(), command.tokenId());
   }
 }

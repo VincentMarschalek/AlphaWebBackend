@@ -13,13 +13,13 @@ public class LoggerMailSenderImpl implements IMailSender {
 
   public static final String LOG_EMAIL_INFO =
       "Logging email with LoggerMailSenderImpl to \nRECIPIENT: {}";
-  public static final String LOG_EMAIL_BODY = "RECIPIENT: {}\nSUBJECT: {}\nBODY: {}";
+  public static final String LOG_EMAIL_BODY = "RECIPIENT: {}, SUBJECT: {}, BODY: {}";
 
   @Override
   public void sendMail(EmailDTO emailDTO) {
     LOGGER.info("Sending E-Mail via LoggerMailSenderImpl");
     LOGGER.info(
-        "RECIPIENT: {}\nSUBJECT: {}\nBODY: {}",
+        "RECIPIENT: {}, SUBJECT: {}, BODY: {}",
         emailDTO.recipient(),
         emailDTO.subject(),
         emailDTO.body());

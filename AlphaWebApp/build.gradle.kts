@@ -39,6 +39,9 @@ dependencies {
 
     //Controller Tests
     testImplementation("io.rest-assured:rest-assured:5.3.1")
+
+    //BouncyCastle TokenUtil
+    implementation("org.bouncycastle:bcpkix-jdk15on:1.70")
 }
 
 tasks.withType<Test> {

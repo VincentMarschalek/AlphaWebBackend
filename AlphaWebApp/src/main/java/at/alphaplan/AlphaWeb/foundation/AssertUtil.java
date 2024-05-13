@@ -10,7 +10,7 @@ public class AssertUtil {
   private static final String isNotNullMsg = "%s must not be null!";
   private static final String hasMinSizeMsg = "%s must be more or equal %d";
   private static final String hasMaxSizeMsg = "%s must be less or equal %d";
-  private static final String hasMinTextSize = "%s must be less or equal %d characters";
+  private static final String hasMinTextSize = "%s must be more or equal %d characters";
   private static final String hasMaxTextSize = "%s must be less or equal %d characters";
   private static final String emailPattern = "^(.+)@(\\S+)$";
   private static final String isValidEmailMsg = "%s must be a valid Email Address";
@@ -50,4 +50,18 @@ public class AssertUtil {
     Assert.isTrue(text.length() <= max, () -> format(hasMaxTextSize, name, max));
     return text;
   }
+
+  public static void ensureTokenMatches(String expectedTokenId, String actualTokenId, String name) {
+    if (!expectedTokenId.equals(actualTokenId)) {
+      throw new IllegalArgumentException("Token does not match " + actualTokenId);
+    }
+  }
+
+  //ist die Annahme korrekt?
+  public static void isTrue(boolean expression, String msg) {
+    Assert.isTrue(expression, () -> msg);
+  }
+
 }
+
+

@@ -5,6 +5,7 @@ import static at.alphaplan.AlphaWeb.foundation.EntityUtil.generateUUIDv4;
 import static at.alphaplan.AlphaWeb.security.PasswordService.*;
 
 import at.alphaplan.AlphaWeb.domain.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.Getter;
 import lombok.ToString;
 import org.springframework.data.annotation.PersistenceCreator;
@@ -32,6 +33,7 @@ public class User extends BaseEntity<String> {
 
   // Ctr for Spring
   @PersistenceCreator
+  @JsonCreator
   protected User(String id) {
     super(id);
   }
@@ -40,9 +42,9 @@ public class User extends BaseEntity<String> {
   public User(String email, Role role, EncodedPassword encodedPassword) {
 
     super(generateUUIDv4());
-
+    this.account = new Account();
     this.email = isValidEmail(email, "email");
-    this.password = encodedPassword.getHashedValue();
+   this.password = encodedPassword.getHashedValue();
     this.role = role;
   }
 }

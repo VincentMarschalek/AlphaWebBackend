@@ -4,7 +4,6 @@ import static at.alphaplan.AlphaWeb.fixture.UserCommandFixture.USER_REGISTRATION
 import static at.alphaplan.AlphaWeb.presentation.commands.Commands.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-import static io.restassured.RestAssured.given;
 
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;

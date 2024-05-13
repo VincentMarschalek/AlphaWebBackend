@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 public class UserRegistrationControllerTest extends AbstractControllerTest {
   // GIVEN/WHEN/THEN -- Behaviour Driven Testing
   @Test
-  public void whenUserRegisters_ThenAccountIsCreated() {
+  public void givenNonExistingUser_whenUserRegisters_ThenAccountIsCreated() {
     var response = getResponse();
 
     // Then

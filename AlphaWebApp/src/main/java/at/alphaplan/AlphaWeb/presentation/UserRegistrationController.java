@@ -24,7 +24,7 @@ public class UserRegistrationController {
 
   @PostMapping
   public ResponseEntity<User> register(@RequestBody UserRegistrationCommand command) {
-//    LOGGER.info("user registration controller");
+    //    LOGGER.info("user registration controller");
 
     var registeredUser = userRegistrationService.register(command);
 
@@ -35,7 +35,7 @@ public class UserRegistrationController {
 
   @GetMapping("/verify")
   public void verify(@ModelAttribute UserVerificationCommand command) {
-    LOGGER.debug("User registration controller#verify {}",command);
+    LOGGER.debug("User registration controller#verify {}", command);
     userRegistrationService.verify(command);
   }
 }

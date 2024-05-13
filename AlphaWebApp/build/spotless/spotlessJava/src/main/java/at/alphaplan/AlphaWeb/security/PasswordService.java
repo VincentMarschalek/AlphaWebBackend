@@ -21,7 +21,7 @@ public class PasswordService {
   private final PasswordEncoder passwordEncoder;
 
   public EncodedPassword encode(String rawPassword) {
-    LOGGER.info("encoding password");
+    //    LOGGER.info("encoding password");
 
     // 1.password strenght assessment
     Strength measure = zxcvbn.measure(rawPassword);

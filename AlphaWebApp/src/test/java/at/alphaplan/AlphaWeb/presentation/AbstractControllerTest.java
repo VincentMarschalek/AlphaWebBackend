@@ -12,8 +12,7 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS) // für beforeAll()
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public abstract class AbstractControllerTest
-{
+public abstract class AbstractControllerTest {
   @LocalServerPort private int port;
   @Autowired private UserRepository userRepository;
 

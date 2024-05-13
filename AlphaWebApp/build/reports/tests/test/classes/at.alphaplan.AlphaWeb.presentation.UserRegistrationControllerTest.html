@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.867s</div>
+<div class="counter">0.488s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">givenNonExistingUser_whenUserRegisters_ThenAccountIsCreated()</td>
-<td class="success">0.867s</td>
+<td class="success">0.488s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,8 +87,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>16:04:07.947 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [at.alphaplan.AlphaWeb.presentation.UserRegistrationControllerTest]: UserRegistrationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-16:04:07.991 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration at.alphaplan.AlphaWeb.AlphaWebApplication for test class at.alphaplan.AlphaWeb.presentation.UserRegistrationControllerTest
+<pre>2024-05-13T15:31:06.791+02:00  INFO 60380 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [at.alphaplan.AlphaWeb.presentation.UserRegistrationControllerTest]: UserRegistrationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-05-13T15:31:06.796+02:00  INFO 60380 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration at.alphaplan.AlphaWeb.AlphaWebApplication for test class at.alphaplan.AlphaWeb.presentation.UserRegistrationControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -98,26 +98,26 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.1)
 
-2024-05-08T16:04:08.114+02:00  INFO 69558 --- [    Test worker] a.a.A.p.UserRegistrationControllerTest   : Starting UserRegistrationControllerTest using Java 20.0.2.1 with PID 69558 (started by vincent in /Users/vincent/Spengergasse/DiplomprojektAlphaPlan/AlphaWebBackend/AlphaWebApp)
-2024-05-08T16:04:08.115+02:00  INFO 69558 --- [    Test worker] a.a.A.p.UserRegistrationControllerTest   : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-05-08T16:04:08.388+02:00  INFO 69558 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2024-05-08T16:04:08.410+02:00  INFO 69558 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 1 MongoDB repository interface.
-2024-05-08T16:04:08.584+02:00  INFO 69558 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2024-05-08T16:04:08.589+02:00  INFO 69558 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-08T16:04:08.589+02:00  INFO 69558 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-05-08T16:04:08.613+02:00  INFO 69558 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-08T16:04:08.614+02:00  INFO 69558 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 422 ms
-2024-05-08T16:04:08.729+02:00  INFO 69558 --- [    Test worker] org.mongodb.driver.client                : MongoClient with metadata {&quot;driver&quot;: {&quot;name&quot;: &quot;mongo-java-driver|sync|spring-boot&quot;, &quot;version&quot;: &quot;4.11.1&quot;}, &quot;os&quot;: {&quot;type&quot;: &quot;Darwin&quot;, &quot;name&quot;: &quot;Mac OS X&quot;, &quot;architecture&quot;: &quot;aarch64&quot;, &quot;version&quot;: &quot;14.4.1&quot;}, &quot;platform&quot;: &quot;Java/Amazon.com Inc./20.0.2.1+10-FR&quot;} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@bf2aa32, com.mongodb.Jep395RecordCodecProvider@56da96b3, com.mongodb.KotlinCodecProvider@6b3d9c38]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
-2024-05-08T16:04:08.738+02:00  INFO 69558 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=7615167}
-2024-05-08T16:04:09.017+02:00  INFO 69558 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 64004 (http) with context path ''
-2024-05-08T16:04:09.022+02:00  INFO 69558 --- [    Test worker] a.a.A.p.UserRegistrationControllerTest   : Started UserRegistrationControllerTest in 0.992 seconds (process running for 1.39)
-2024-05-08T16:04:09.772+02:00  INFO 69558 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-05-08T16:04:09.773+02:00  INFO 69558 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-05-08T16:04:09.774+02:00  INFO 69558 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-05-08T16:04:09.795+02:00  INFO 69558 --- [o-auto-1-exec-1] a.a.A.service.UserRegistrationService    : User registration with email vincent.marschalek@yahoo.de
-2024-05-08T16:04:09.901+02:00  INFO 69558 --- [o-auto-1-exec-1] a.a.AlphaWeb.email.LoggerMailSenderImpl  : Sending E-Mail via LoggerMailSenderImpl
-2024-05-08T16:04:09.901+02:00  INFO 69558 --- [o-auto-1-exec-1] a.a.AlphaWeb.email.LoggerMailSenderImpl  : RECIPIENT: vincent.marschalek@yahoo.de, SUBJECT: Click the link and verify your email to move on., BODY: /api/registration/token?userId=localhost&amp;tokenId=c370810a-7c0c-4632-b724-a143ef25e207
-2024-05-08T16:04:09.923+02:00  INFO 69558 --- [o-auto-1-exec-1] a.a.A.service.UserRegistrationService    : User registration with email vincent.marschalek@yahoo.de successful
+2024-05-13T15:31:06.812+02:00  INFO 60380 --- [    Test worker] a.a.A.p.UserRegistrationControllerTest   : Starting UserRegistrationControllerTest using Java 21.0.1 with PID 60380 (started by vincent in /Users/vincent/Spengergasse/DiplomprojektAlphaPlan/AlphaWebBackend/AlphaWebApp)
+2024-05-13T15:31:06.812+02:00  INFO 60380 --- [    Test worker] a.a.A.p.UserRegistrationControllerTest   : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-05-13T15:31:06.929+02:00  INFO 60380 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-05-13T15:31:06.933+02:00  INFO 60380 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 1 MongoDB repository interface.
+2024-05-13T15:31:07.049+02:00  INFO 60380 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-13T15:31:07.055+02:00  INFO 60380 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-13T15:31:07.055+02:00  INFO 60380 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-05-13T15:31:07.077+02:00  INFO 60380 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-13T15:31:07.077+02:00  INFO 60380 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 264 ms
+2024-05-13T15:31:07.143+02:00  INFO 60380 --- [    Test worker] org.mongodb.driver.client                : MongoClient with metadata {&quot;driver&quot;: {&quot;name&quot;: &quot;mongo-java-driver|sync|spring-boot&quot;, &quot;version&quot;: &quot;4.11.1&quot;}, &quot;os&quot;: {&quot;type&quot;: &quot;Darwin&quot;, &quot;name&quot;: &quot;Mac OS X&quot;, &quot;architecture&quot;: &quot;aarch64&quot;, &quot;version&quot;: &quot;14.4.1&quot;}, &quot;platform&quot;: &quot;Java/Oracle Corporation/21.0.1+12-29&quot;} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@12417468, com.mongodb.Jep395RecordCodecProvider@459003a0, com.mongodb.KotlinCodecProvider@d325518]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2024-05-13T15:31:07.144+02:00  INFO 60380 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=645541}
+2024-05-13T15:31:07.293+02:00  INFO 60380 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 56204 (http) with context path ''
+2024-05-13T15:31:07.296+02:00  INFO 60380 --- [    Test worker] a.a.A.p.UserRegistrationControllerTest   : Started UserRegistrationControllerTest in 0.497 seconds (process running for 2.056)
+2024-05-13T15:31:07.701+02:00  INFO 60380 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-13T15:31:07.701+02:00  INFO 60380 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-13T15:31:07.702+02:00  INFO 60380 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-13T15:31:07.726+02:00  INFO 60380 --- [o-auto-1-exec-1] a.a.A.service.UserRegistrationService    : User registration with email vincent.marschalek@yahoo.de
+2024-05-13T15:31:07.822+02:00  INFO 60380 --- [o-auto-1-exec-1] a.a.AlphaWeb.email.LoggerMailSenderImpl  : Sending E-Mail via LoggerMailSenderImpl
+2024-05-13T15:31:07.822+02:00  INFO 60380 --- [o-auto-1-exec-1] a.a.AlphaWeb.email.LoggerMailSenderImpl  : RECIPIENT: vincent.marschalek@yahoo.de, SUBJECT: Click the link and verify your email to move on., BODY: /api/registration/token?userId=localhost&amp;tokenId=2d1373ea-fbc1-4ac0-943f-579e841472f2
+2024-05-13T15:31:07.827+02:00  INFO 60380 --- [o-auto-1-exec-1] a.a.A.service.UserRegistrationService    : User registration with email vincent.marschalek@yahoo.de successful
 </pre>
 </span>
 </div>
@@ -129,7 +129,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.5</a> at 8 May 2024, 16:04:09</p>
+<a href="http://www.gradle.org">Gradle 8.5</a> at 13 May 2024, 15:31:08</p>
 </div>
 </div>
 </body>

@@ -2,7 +2,6 @@ package at.alphaplan.AlphaWeb.security.web;
 
 import at.alphaplan.AlphaWeb.domain.user.User;
 import java.util.Collection;
-import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,7 +10,8 @@ public class SecurityUser implements UserDetails {
   private static final String ROLE_PREFIX = "ROLE_";
 
   // our domain user
-  @Getter private final User user;
+  //  @Getter
+  private final User user;
 
   public SecurityUser(User user) {
     this.user = user;

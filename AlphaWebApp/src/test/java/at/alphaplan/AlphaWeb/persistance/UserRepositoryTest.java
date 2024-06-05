@@ -1,7 +1,7 @@
 package at.alphaplan.AlphaWeb.persistance;
 
 import static at.alphaplan.AlphaWeb.domain.user.Role.USER;
-import static at.alphaplan.AlphaWeb.security.PasswordService.*;
+import static at.alphaplan.AlphaWeb.security.password.PasswordService.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.notNullValue;

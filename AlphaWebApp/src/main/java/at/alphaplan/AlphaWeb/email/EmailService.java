@@ -20,19 +20,22 @@ public class EmailService {
   @Value("${app.public.port:8080}")
   private String port;
 
-  private final String VERIFICATION_LINK = "/api/registration/token?userId=%s&tokenId=%s";
+  private final String VERIFICATION_LINK = "%s://%s:%s/api/registration/token?userId=%s&tokenId=%s";
 
   // @Async
   public void sendVerificationEmail(User user) {
-    mailSender.sendMail(
-        new EmailDTO(user.getEmail(), getVerificationSubject(), getVerificationBody(user)));
+    var receiver = user.getAccount().getVerificationEmail();
+    var subject = getVerificationEmailSubject();
+    var body = getVerificationEmailBody(user);
+    mailSender.sendMail(new EmailDTO(receiver, subject, body));
   }
 
-  public String getVerificationSubject() {
+  public String getVerificationEmailSubject() {
     return "Click the link and verify your email to move on.";
   }
 
-  public String getVerificationBody(User user) {
-    return String.format(VERIFICATION_LINK, domain, user.getId());
+  public String getVerificationEmailBody(User user) {
+    String token = user.getAccount().getVerificationEmailToken();
+    return String.format(VERIFICATION_LINK, protocol, domain, port, user.getId(), token);
   }
 }

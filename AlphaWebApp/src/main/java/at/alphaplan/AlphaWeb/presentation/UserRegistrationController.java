@@ -1,6 +1,7 @@
 package at.alphaplan.AlphaWeb.presentation;
 
-import static at.alphaplan.AlphaWeb.presentation.commands.Commands.*;
+import static at.alphaplan.AlphaWeb.presentation.commands.Commands.UserRegistrationCommand;
+import static at.alphaplan.AlphaWeb.presentation.commands.Commands.UserVerificationCommand;
 
 import at.alphaplan.AlphaWeb.domain.user.User;
 import at.alphaplan.AlphaWeb.service.UserRegistrationService;

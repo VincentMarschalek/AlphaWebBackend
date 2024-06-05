@@ -1,4 +1,4 @@
-package at.alphaplan.AlphaWeb.security;
+package at.alphaplan.AlphaWeb.security.password;
 
 import com.nulabinc.zxcvbn.Strength;
 import com.nulabinc.zxcvbn.Zxcvbn;

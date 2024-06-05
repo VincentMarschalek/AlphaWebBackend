@@ -6,7 +6,9 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import at.alphaplan.AlphaWeb.security.PasswordService.EncodedPassword;
+import at.alphaplan.AlphaWeb.security.password.PasswordService;
+import at.alphaplan.AlphaWeb.security.password.PasswordService.EncodedPassword;
+import at.alphaplan.AlphaWeb.security.web.WebSecurityConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +17,7 @@ import org.springframework.context.annotation.Import;
 
 // @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @SpringBootTest(classes = {PasswordService.class})
-@Import(SecurityConfig.class)
+@Import(WebSecurityConfig.class)
 public class PasswordServiceTest {
   // 1. Test Passwort Stärke
   // FAIL: 1/2

@@ -1,6 +1,7 @@
 package at.alphaplan.AlphaWeb.domain.order;
 
 import at.alphaplan.AlphaWeb.domain.BaseEntity;
+import at.alphaplan.AlphaWeb.domain.user.Address;
 import at.alphaplan.AlphaWeb.domain.user.LineItems;
 import at.alphaplan.AlphaWeb.domain.user.User;
 import org.springframework.data.annotation.Id;
@@ -13,7 +14,9 @@ public class Order extends BaseEntity<String> {
 
   private String status;
 
-  private String address;
+  private String deliveryAddress;
+
+  private Address address;
 
   private LineItems lineItems;
 

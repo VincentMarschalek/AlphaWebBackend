@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.499s</div>
+<div class="counter">0.482s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,22 +82,22 @@
 </thead>
 <tr>
 <td class="success">auditFields_shouldBeSetAutomatically()</td>
-<td class="success">0.003s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">findByEmail_shouldReturnUser_whenUserExists()</td>
-<td class="success">0.470s</td>
+<td class="success">0.456s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">findById_shouldReturnUser_whenUserExists()</td>
-<td class="success">0.004s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">saveUser_shouldFail_whenIdIsNotUpdated()</td>
-<td class="success">0.015s</td>
+<td class="success">0.014s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -115,8 +115,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>15:31:05.596 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [at.alphaplan.AlphaWeb.persistance.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-15:31:05.642 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration at.alphaplan.AlphaWeb.AlphaWebApplication for test class at.alphaplan.AlphaWeb.persistance.UserRepositoryTest
+<pre>14:40:28.234 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [at.alphaplan.AlphaWeb.persistance.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:40:28.281 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration at.alphaplan.AlphaWeb.AlphaWebApplication for test class at.alphaplan.AlphaWeb.persistance.UserRepositoryTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -126,13 +126,13 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.1)
 
-2024-05-13T15:31:05.781+02:00  INFO 60380 --- [    Test worker] a.a.A.persistance.UserRepositoryTest     : Starting UserRepositoryTest using Java 21.0.1 with PID 60380 (started by vincent in /Users/vincent/Spengergasse/DiplomprojektAlphaPlan/AlphaWebBackend/AlphaWebApp)
-2024-05-13T15:31:05.782+02:00  INFO 60380 --- [    Test worker] a.a.A.persistance.UserRepositoryTest     : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-05-13T15:31:05.969+02:00  INFO 60380 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2024-05-13T15:31:05.990+02:00  INFO 60380 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 1 MongoDB repository interface.
-2024-05-13T15:31:06.167+02:00  INFO 60380 --- [    Test worker] org.mongodb.driver.client                : MongoClient with metadata {&quot;driver&quot;: {&quot;name&quot;: &quot;mongo-java-driver|sync|spring-boot&quot;, &quot;version&quot;: &quot;4.11.1&quot;}, &quot;os&quot;: {&quot;type&quot;: &quot;Darwin&quot;, &quot;name&quot;: &quot;Mac OS X&quot;, &quot;architecture&quot;: &quot;aarch64&quot;, &quot;version&quot;: &quot;14.4.1&quot;}, &quot;platform&quot;: &quot;Java/Oracle Corporation/21.0.1+12-29&quot;} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@12417468, com.mongodb.Jep395RecordCodecProvider@459003a0, com.mongodb.KotlinCodecProvider@d325518]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
-2024-05-13T15:31:06.178+02:00  INFO 60380 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=7314875}
-2024-05-13T15:31:06.285+02:00  INFO 60380 --- [    Test worker] a.a.A.persistance.UserRepositoryTest     : Started UserRepositoryTest in 0.609 seconds (process running for 1.045)
+2024-06-05T14:40:28.427+02:00  INFO 6521 --- [    Test worker] a.a.A.persistance.UserRepositoryTest     : Starting UserRepositoryTest using Java 21.0.1 with PID 6521 (started by vincent in /Users/vincent/Spengergasse/DiplomprojektAlphaPlan/AlphaWebBackend/AlphaWebApp)
+2024-06-05T14:40:28.428+02:00  INFO 6521 --- [    Test worker] a.a.A.persistance.UserRepositoryTest     : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-06-05T14:40:28.636+02:00  INFO 6521 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-06-05T14:40:28.662+02:00  INFO 6521 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 1 MongoDB repository interface.
+2024-06-05T14:40:28.852+02:00  INFO 6521 --- [    Test worker] org.mongodb.driver.client                : MongoClient with metadata {&quot;driver&quot;: {&quot;name&quot;: &quot;mongo-java-driver|sync|spring-boot&quot;, &quot;version&quot;: &quot;4.11.1&quot;}, &quot;os&quot;: {&quot;type&quot;: &quot;Darwin&quot;, &quot;name&quot;: &quot;Mac OS X&quot;, &quot;architecture&quot;: &quot;aarch64&quot;, &quot;version&quot;: &quot;14.5&quot;}, &quot;platform&quot;: &quot;Java/Oracle Corporation/21.0.1+12-29&quot;} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@787e4357, com.mongodb.Jep395RecordCodecProvider@392781e, com.mongodb.KotlinCodecProvider@3fcbc766]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2024-06-05T14:40:28.866+02:00  INFO 6521 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=11331542}
+2024-06-05T14:40:28.978+02:00  INFO 6521 --- [    Test worker] a.a.A.persistance.UserRepositoryTest     : Started UserRepositoryTest in 0.664 seconds (process running for 1.116)
 </pre>
 </span>
 </div>
@@ -154,7 +154,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.5</a> at 13 May 2024, 15:31:08</p>
+<a href="http://www.gradle.org">Gradle 8.5</a> at 5 Jun 2024, 14:40:29</p>
 </div>
 </div>
 </body>

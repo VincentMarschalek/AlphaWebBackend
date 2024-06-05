@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AlphaWebApp/AlphaWeb.AlphaWebApp.main.iml" filepath="$PROJECT_DIR$/.idea/modules/AlphaWebApp/AlphaWeb.AlphaWebApp.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AlphaWebApp/AlphaWeb.AlphaWebApp.test.iml" filepath="$PROJECT_DIR$/.idea/modules/AlphaWebApp/AlphaWeb.AlphaWebApp.test.iml" />
     </modules>
   </component>
 </project>

@@ -36,7 +36,7 @@ public class UserRegistrationService {
     EncodedPassword encodedPassword = passwordService.encode(command.password());
 
     // 3.Instantiate a user (account=disabled)
-    var user = new User(command.email(), USER, encodedPassword);
+    var user = createUser(command, encodedPassword);
     user.getAccount().generateEmailTokenFor(command.email());
 
     // 4.Send Email
@@ -64,7 +64,7 @@ public class UserRegistrationService {
 
   private User createUser(UserRegistrationCommand command, EncodedPassword password) {
     var profile = new Profile(command.firstName(), command.lastName());
-    var user = new User(command.email(), USER, password);
+    var user = new User(command.email(), USER, password, profile);
     user.getAccount().generateEmailTokenFor(command.email());
     return user;
   }

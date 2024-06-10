@@ -1,6 +1,6 @@
 package at.alphaplan.AlphaWeb.presentation.commands;
 
-public class Commands {
+public abstract class Commands {
 
   // --------Registration
   public record UserRegistrationCommand(

@@ -12,8 +12,8 @@ public class Profile {
 
   //  private Address address;
 
-  public Profile(String firstname, String lastName) {
-    this.firstName = hasMaxText(firstname, 255, "firstName");
+  public Profile(String firstName, String lastName) {
+    this.firstName = hasMaxText(firstName, 255, "firstName");
     this.lastName = hasMaxText(lastName, 255, "lastName");
     //    this.address = isNotNull(address, "Adresse");
   }

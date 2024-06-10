@@ -34,7 +34,7 @@ public class UserRegistrationController {
     return ResponseEntity.created(uri).body(registeredUser);
   }
 
-  @GetMapping("/verify")
+  @GetMapping("/token")
   public void verify(@ModelAttribute UserVerificationCommand command) {
     LOGGER.debug("User registration controller#verify {}", command);
     userRegistrationService.verify(command);

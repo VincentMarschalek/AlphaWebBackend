@@ -1,14 +1,13 @@
 package at.alphaplan.AlphaWeb.persistance;
 
-import static at.alphaplan.AlphaWeb.domain.user.Role.USER;
-import static at.alphaplan.AlphaWeb.security.password.PasswordService.*;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import at.alphaplan.AlphaWeb.config.MongoConfig;
-import at.alphaplan.AlphaWeb.domain.user.*;
+import at.alphaplan.AlphaWeb.domain.user.User;
+import at.alphaplan.AlphaWeb.fixture.UserFixture;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,13 +20,12 @@ import org.springframework.dao.OptimisticLockingFailureException;
 @DataMongoTest
 @Import(MongoConfig.class)
 public class UserRepositoryTest {
-  public static final String MAIL = "test@spengergasse.at";
   @Autowired private UserRepository userRepository;
   private User userSaved;
 
   @BeforeEach
   public void setup() {
-    var user = new User(MAIL, USER, new EncodedPassword("password"));
+    var user = UserFixture.createUser();
     userRepository.deleteAll();
     userSaved = userRepository.save(user);
   }
@@ -71,7 +69,7 @@ public class UserRepositoryTest {
   @Test
   public void saveUser_shouldFail_withDuplicateEmail() {
     // GIVEN
-    var duplicatedUser = new User(MAIL, USER, new EncodedPassword("password"));
+    var duplicatedUser = UserFixture.createUser();
     // WHEN & THEN
     assertThrows(DuplicateKeyException.class, () -> userRepository.save(duplicatedUser));
   }

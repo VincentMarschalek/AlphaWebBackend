@@ -3,6 +3,7 @@ package at.alphaplan.AlphaWeb.fixture;
 import static at.alphaplan.AlphaWeb.security.password.PasswordService.EncodedPassword;
 import static org.springframework.security.crypto.factory.PasswordEncoderFactories.createDelegatingPasswordEncoder;
 
+import at.alphaplan.AlphaWeb.domain.user.Profile;
 import at.alphaplan.AlphaWeb.domain.user.Role;
 import at.alphaplan.AlphaWeb.domain.user.User;
 import at.alphaplan.AlphaWeb.security.password.PasswordService;
@@ -20,7 +21,7 @@ public class UserFixture {
   private static final EncodedPassword encodedPassword = passwordService.encode(PASSWORD);
 
   public static User createUser() {
-    var user = new User(EMAIL, Role.USER, encodedPassword);
-    return user;
+    var profile = new Profile(FIRST_NAME, LAST_NAME);
+    return new User(EMAIL, Role.USER, encodedPassword, profile);
   }
 }

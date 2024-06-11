@@ -2,19 +2,34 @@ package at.alphaplan.AlphaWeb.domain.product;
 
 import at.alphaplan.AlphaWeb.domain.BaseEntity;
 import at.alphaplan.AlphaWeb.domain.media.Media;
-import org.springframework.data.annotation.Id;
+import java.util.List;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.ToString;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.lang.Nullable;
 
+@Getter
+@ToString(callSuper = true)
+@Document(collection = "product")
 public class Product extends BaseEntity<String> {
 
-  @Id private Id productId;
+  private final String name;
+  private final int price;
+  private @Nullable final String description;
+  private @Nullable final List<Media> productPic;
 
-  private int price;
-
-  private String description;
-
-  private Media productPic;
-
-  protected Product(String id) {
+  @Builder
+  public Product(
+      String id,
+      String name,
+      int price,
+      @Nullable String description,
+      @Nullable List<Media> productPic) {
     super(id);
+    this.name = name;
+    this.price = price;
+    this.description = description;
+    this.productPic = productPic;
   }
 }

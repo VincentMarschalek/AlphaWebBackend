@@ -1,7 +1,9 @@
 package at.alphaplan.AlphaWeb.presentation;
 
-import at.alphaplan.AlphaWeb.domain.user.User;
+import static at.alphaplan.AlphaWeb.presentation.views.Views.LoginView;
+
 import at.alphaplan.AlphaWeb.security.web.SecurityUser;
+import at.alphaplan.AlphaWeb.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,10 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class UserController {
   private final Logger LOGGER = LoggerFactory.getLogger(UserRegistrationController.class);
+  private final UserService userService;
 
   @GetMapping
-  public User login(@AuthenticationPrincipal SecurityUser principal) {
+  public LoginView login(@AuthenticationPrincipal SecurityUser principal) {
     LOGGER.debug("User controller#login {}", principal);
-    return principal.getUser();
+
+    return userService.login(principal.getUser());
   }
 }

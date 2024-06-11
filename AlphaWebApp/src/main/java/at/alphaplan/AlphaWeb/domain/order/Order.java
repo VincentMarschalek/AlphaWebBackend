@@ -1,26 +1,30 @@
 package at.alphaplan.AlphaWeb.domain.order;
 
 import at.alphaplan.AlphaWeb.domain.BaseEntity;
-import at.alphaplan.AlphaWeb.domain.user.Address;
-import at.alphaplan.AlphaWeb.domain.user.LineItems;
-import at.alphaplan.AlphaWeb.domain.user.User;
-import org.springframework.data.annotation.Id;
+import java.time.Instant;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Getter
+@ToString(callSuper = true)
+@Document(collection = "order")
 public class Order extends BaseEntity<String> {
 
-  @Id private Id orderId;
+  private final String userId;
+  private final String productId;
+  private final Instant orderDate;
+  // Setter für den Status
+  @Setter private String status;
 
-  private User userID;
-
-  private String status;
-
-  private String deliveryAddress;
-
-  private Address address;
-
-  private LineItems lineItems;
-
-  protected Order(String id) {
-    super(id);
+  @Builder
+  public Order(String Id, String userId, String productId, Instant orderDate, String status) {
+    super(Id);
+    this.userId = userId;
+    this.productId = productId;
+    this.orderDate = orderDate != null ? orderDate : Instant.now();
+    this.status = status;
   }
 }

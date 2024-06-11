@@ -42,6 +42,13 @@ dependencies {
 
     //BouncyCastle TokenUtil
     implementation("org.bouncycastle:bcpkix-jdk15on:1.70")
+
+    // Map Struct
+    	implementation("org.mapstruct:mapstruct:1.5.3.Final")
+    	annotationProcessor("org.mapstruct:mapstruct-processor:1.5.3.Final")
+
+        implementation ("javax.annotation:javax.annotation-api:1.3.2")
+
 }
 
 tasks.withType<Test> {

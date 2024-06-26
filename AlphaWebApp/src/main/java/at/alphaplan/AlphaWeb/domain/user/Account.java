@@ -1,7 +1,7 @@
 package at.alphaplan.AlphaWeb.domain.user;
 
 import static at.alphaplan.AlphaWeb.foundation.AssertUtil.isNotNull;
-import static at.alphaplan.AlphaWeb.security.token.EmailVerificationToken.*;
+import static at.alphaplan.AlphaWeb.security.token.EmailVerificationToken.generateEmailToken;
 import static java.time.Instant.now;
 
 import at.alphaplan.AlphaWeb.security.token.EmailVerificationToken;
@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 public class Account {
 
-  @Setter private boolean enabled = false;
+  @Setter private boolean enabled = true;
 
   private EmailVerificationToken emailToken;
 

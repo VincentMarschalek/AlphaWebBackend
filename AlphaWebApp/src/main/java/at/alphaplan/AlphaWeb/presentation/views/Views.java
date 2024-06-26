@@ -1,6 +1,7 @@
 package at.alphaplan.AlphaWeb.presentation.views;
 
 import at.alphaplan.AlphaWeb.domain.order.Order;
+import at.alphaplan.AlphaWeb.domain.product.Product;
 import at.alphaplan.AlphaWeb.domain.user.Role;
 import at.alphaplan.AlphaWeb.domain.user.User;
 import java.util.List;
@@ -19,5 +20,5 @@ public abstract class Views {
 
   public record OrderView(Order order) {}
 
-  public record LoginView(UserView userView, List<Order> orders) {}
+  public record LoginView(UserView authUser, List<Product> products, List<Order> orders) {}
 }

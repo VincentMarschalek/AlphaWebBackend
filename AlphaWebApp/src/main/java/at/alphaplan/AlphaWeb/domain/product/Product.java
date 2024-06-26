@@ -2,7 +2,6 @@ package at.alphaplan.AlphaWeb.domain.product;
 
 import at.alphaplan.AlphaWeb.domain.BaseEntity;
 import at.alphaplan.AlphaWeb.domain.media.Media;
-import java.util.List;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
@@ -17,15 +16,11 @@ public class Product extends BaseEntity<String> {
   private final String name;
   private final int price;
   private @Nullable final String description;
-  private @Nullable final List<Media> productPic;
+  private @Nullable final Media productPic;
 
   @Builder
   public Product(
-      String id,
-      String name,
-      int price,
-      @Nullable String description,
-      @Nullable List<Media> productPic) {
+      String id, String name, int price, @Nullable String description, @Nullable Media productPic) {
     super(id);
     this.name = name;
     this.price = price;

@@ -15,7 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class WebSecurityConfig {
 
-  @Bean
+  // @Bean
   public UserDetailsService userDetailsService(UserRepository userRepository) {
     return new DaoUserDetailsService(userRepository);
   }
@@ -31,6 +31,8 @@ public class WebSecurityConfig {
         (authorize) ->
             authorize
                 .requestMatchers("/api/registration/**")
+                .permitAll()
+                .requestMatchers("/api/media/**")
                 .permitAll()
                 .requestMatchers("/api/user/**")
                 .hasRole(Role.USER.toString())

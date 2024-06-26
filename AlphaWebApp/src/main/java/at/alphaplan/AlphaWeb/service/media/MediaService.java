@@ -1,26 +1,6 @@
 package at.alphaplan.AlphaWeb.service.media;
 
-import static org.springframework.data.mongodb.core.query.Criteria.where;
-import static org.springframework.data.mongodb.core.query.Query.query;
-
-import at.alphaplan.AlphaWeb.domain.media.Media;
-import at.alphaplan.AlphaWeb.presentation.commands.Commands.MediaMetaCommand;
-import com.mongodb.client.gridfs.model.GridFSFile;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import lombok.RequiredArgsConstructor;
-import org.bson.types.ObjectId;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.core.io.Resource;
-import org.springframework.data.mongodb.gridfs.GridFsResource;
-import org.springframework.data.mongodb.gridfs.GridFsTemplate;
-import org.springframework.data.util.Pair;
-import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
-
+/*
 @Service
 @RequiredArgsConstructor
 public class MediaService {
@@ -92,3 +72,4 @@ public class MediaService {
         .orElse("application/octet-stream");
   }
 }
+ */

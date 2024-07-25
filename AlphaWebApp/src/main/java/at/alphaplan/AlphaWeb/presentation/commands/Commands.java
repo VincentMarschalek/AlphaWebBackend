@@ -43,14 +43,6 @@ public abstract class Commands {
 
   // ---------------Order
 
-  public record OrderCommand(String userId, String productId) {
-
-    public String userId() {
-      return userId.trim();
-    }
-
-    public String productId() {
-      return productId.trim();
-    }
-  }
+  public record OrderCommand(
+      String productId, String message, String address, String billingAddress) {}
 }

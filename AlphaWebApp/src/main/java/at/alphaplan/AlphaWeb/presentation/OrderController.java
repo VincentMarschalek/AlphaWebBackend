@@ -1,12 +1,15 @@
 package at.alphaplan.AlphaWeb.presentation;
 
 import at.alphaplan.AlphaWeb.domain.order.Order;
+import at.alphaplan.AlphaWeb.presentation.commands.Commands.OrderCommand;
+import at.alphaplan.AlphaWeb.security.web.SecurityUser;
 import at.alphaplan.AlphaWeb.service.OrderService;
 import java.net.URI;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -55,8 +58,8 @@ public class OrderController {
 
   @PostMapping
   public ResponseEntity<Order> createOrder(
-      @RequestParam String userId, @RequestParam String productId) {
-    Order createdOrder = orderService.createOrder(userId, productId);
+      @AuthenticationPrincipal SecurityUser principal, @RequestBody OrderCommand command) {
+    Order createdOrder = orderService.createOrder(principal.getUser().getId(), command);
     URI uri = URI.create("/api/orders/" + createdOrder.getId());
     return ResponseEntity.created(uri).body(createdOrder);
   }

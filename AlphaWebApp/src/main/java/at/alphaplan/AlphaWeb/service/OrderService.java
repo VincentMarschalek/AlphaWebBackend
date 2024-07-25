@@ -4,6 +4,8 @@ import static at.alphaplan.AlphaWeb.foundation.EntityUtil.generateUUIDv4;
 
 import at.alphaplan.AlphaWeb.domain.order.Order;
 import at.alphaplan.AlphaWeb.persistance.OrderRepository;
+import at.alphaplan.AlphaWeb.persistance.ProductRepository;
+import at.alphaplan.AlphaWeb.presentation.commands.Commands.OrderCommand;
 import java.time.Instant;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class OrderService {
   private final OrderRepository orderRepository;
+  private final ProductRepository productRepository;
 
   public List<Order> getAllOrders() {
     return orderRepository.findAll();
@@ -22,12 +25,21 @@ public class OrderService {
     return orderRepository.findById(Id).orElseThrow(() -> new RuntimeException("Order not found!"));
   }
 
-  public Order createOrder(String userId, String productId) {
+  public Order createOrder(String userId, OrderCommand command) {
+    var product =
+        productRepository
+            .findById(command.productId())
+            .orElseThrow(() -> new RuntimeException("Product not found!"));
+
     Order order =
         Order.builder()
             .Id(generateUUIDv4())
             .userId(userId)
-            .productId(productId)
+            .productId(command.productId())
+            .productPic(product.getProductPic())
+            .address(command.address())
+            .billingAddress(command.billingAddress())
+            .message(command.message())
             .orderDate(Instant.now())
             .status("PENDING")
             .build();
